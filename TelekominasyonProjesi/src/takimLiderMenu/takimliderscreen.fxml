@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: beige;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="takimLiderMenu.TakimLiderScreenController">
    <center>
       <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
@@ -23,6 +22,9 @@
                </center>
             </BorderPane>
             <BorderPane prefHeight="200.0" prefWidth="200.0">
+               <bottom>
+                  <Button fx:id="exitButton" mnemonicParsing="false" onAction="#exitApp" prefHeight="45.0" prefWidth="200.0" stylesheets="@../ui/Buttons.CSS" text="Çıkış Yap" BorderPane.alignment="CENTER" />
+               </bottom>
                <center>
                   <Button fx:id="openProtests" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#openProtestsScreen" prefHeight="45.0" prefWidth="200.0" stylesheets="@../ui/Buttons.CSS" text="İtirazlar" textFill="WHITE" BorderPane.alignment="CENTER">
                      <font>

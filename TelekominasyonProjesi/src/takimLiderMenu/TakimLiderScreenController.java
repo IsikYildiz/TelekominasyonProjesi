@@ -10,6 +10,10 @@ public class TakimLiderScreenController {
 
     @FXML
     private Button openProtests;
+    
+    @FXML
+    private Button exitButton;
+
 
     @FXML
     void openProtestsScreen(ActionEvent event) {//Takım liderine gelen itirazları gösterir.
@@ -20,5 +24,9 @@ public class TakimLiderScreenController {
             System.out.println("Sayfa Yüklenemedi!");
         }
     }
-
+    
+    @FXML
+    void exitApp(ActionEvent event) {
+    	System.exit(1);
+    }
 }
