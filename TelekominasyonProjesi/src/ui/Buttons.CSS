@@ -1,0 +1,23 @@
+.button{
+    -fx-background-color: rgb(169, 68, 68);
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-color: black;
+    -fx-font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.button:hover{
+    -fx-background-color: rgb(197, 37, 37);
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-color: black;
+    -fx-font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.button:pressed{
+    -fx-background-color: rgb(44, 78, 136);
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-color: black;
+    -fx-font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.RadioMenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: BEIGE;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="addCallScreen.addCallScreenController">
+   <center>
+      <VBox alignment="CENTER" maxWidth="-Infinity" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <BorderPane prefHeight="200.0" prefWidth="200.0">
+               <center>
+                  <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+                     <image>
+                        <Image url="@../ui/ikon.png" />
+                     </image>
+                  </ImageView>
+               </center>
+               <bottom>
+                  <Label fx:id="error" prefHeight="26.0" prefWidth="249.0" text="Bilgilerde Hata veya Eksiklik Var" visible="false" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+               </bottom>
+            </BorderPane>
+            <BorderPane prefHeight="200.0" prefWidth="200.0">
+               <left>
+                  <TextField fx:id="callDate" maxWidth="-Infinity" prefHeight="40.0" prefWidth="200.0" promptText="Görüşme Tarihi" stylesheets="@../ui/Text-Field.CSS" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+               </left>
+               <right>
+                  <TextField fx:id="customerName" maxWidth="-Infinity" prefHeight="40.0" prefWidth="200.0" promptText="Müşteri Tam Adı" stylesheets="@../ui/Text-Field.CSS" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+               </right>
+            </BorderPane>
+            <BorderPane prefHeight="200.0" prefWidth="200.0">
+               <right>
+                  <TextField fx:id="callEndTime" maxWidth="-Infinity" prefHeight="40.0" prefWidth="200.0" promptText="Görüşme Bitiş Saati" stylesheets="@../ui/Text-Field.CSS" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+               </right>
+               <left>
+                  <TextField fx:id="callStartTime" maxWidth="-Infinity" prefHeight="40.0" prefWidth="200.0" promptText="Görüşme Başlangıç Saati" stylesheets="@../ui/Text-Field.CSS" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+               </left>
+            </BorderPane>
+            <BorderPane prefHeight="200.0" prefWidth="200.0">
+               <right>
+                  <MenuButton alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefWidth="200.0" style="-fx-background-color: rgb(169, 68, 68);" text="Görüşme Durumu" textFill="WHITE" BorderPane.alignment="CENTER">
+                    <items>
+                        <RadioMenuItem mnemonicParsing="false" text="tamamlandı">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="callSituation" />
+                           </toggleGroup>
+                        </RadioMenuItem>
+                        <RadioMenuItem mnemonicParsing="false" text="takip ediliyor" toggleGroup="$callSituation" />
+                        <RadioMenuItem mnemonicParsing="false" text="sorun çözülemedi" toggleGroup="$callSituation" />
+                    </items>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </MenuButton>
+               </right>
+               <left>
+                  <MenuButton alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefWidth="200.0" style="-fx-background-color: rgb(169, 68, 68);" text="Görüşme Konusu" textFill="WHITE" BorderPane.alignment="CENTER">
+                    <items>
+                        <RadioMenuItem mnemonicParsing="false" text="arıza">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="callSubject" />
+                           </toggleGroup>
+                        </RadioMenuItem>
+                        <RadioMenuItem mnemonicParsing="false" text="talep" toggleGroup="$callSubject" />
+                    </items>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </MenuButton>
+               </left>
+            </BorderPane>
+            <BorderPane prefHeight="200.0" prefWidth="200.0">
+               <center>
+                  <Button fx:id="addCallButton" mnemonicParsing="false" onAction="#addCall" prefHeight="45.0" prefWidth="200.0" stylesheets="@../ui/Buttons.CSS" text="Çağrı Ekle" BorderPane.alignment="CENTER" />
+               </center>
+               <bottom>
+                  <Button fx:id="backButton" mnemonicParsing="false" onAction="#goBack" prefHeight="45.0" prefWidth="200.0" stylesheets="@../ui/Buttons.CSS" text="Geri Gel" BorderPane.alignment="CENTER" />
+               </bottom>
+               <top>
+                  <MenuButton alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="45.0" prefWidth="200.0" style="-fx-background-color: rgb(169, 68, 68);" text="Müşteri Türü" textFill="WHITE" BorderPane.alignment="CENTER">
+                    <items>
+                        <RadioMenuItem mnemonicParsing="false" text="Yeni Müşteri">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="customerType" />
+                           </toggleGroup></RadioMenuItem>
+                        <RadioMenuItem mnemonicParsing="false" text="Eski Müşteri" toggleGroup="$customerType" />
+                    </items>
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </MenuButton>
+               </top>
+            </BorderPane>
+         </children>
+      </VBox>
+   </center>
+   <top>
+      <AnchorPane maxHeight="120.0" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </top>
+   <bottom>
+      <AnchorPane maxHeight="120.0" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </bottom>
+</BorderPane>
