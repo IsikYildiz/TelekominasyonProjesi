@@ -49,6 +49,10 @@ public class TakimLideriProtestsScreenController {
     
     @FXML
     private Button declineButton;
+    
+    @FXML
+    private Button backButton;
+
 	
     @SuppressWarnings("unchecked")
 	@FXML
@@ -128,5 +132,15 @@ public class TakimLideriProtestsScreenController {
     void edit(TableColumn.CellEditEvent<TakimLiderProtests, String> a) {//Tablodaki itiraz cevabının düzenlenmesini sağlar.
     	TakimLiderProtests answer= protestTable.getSelectionModel().getSelectedItem();
     	answer.setProtestAnswer(a.getNewValue());
+    }
+    
+    @FXML
+    void back(ActionEvent event) { //Takım lideri menüsüne geri döner.
+    	try {
+            Parent root = FXMLLoader.load(getClass().getResource("/takimLiderMenu/takimliderscreen.fxml"));
+            backButton.getScene().setRoot(root);
+        } catch (Exception e) {
+            System.out.println("Başarısız");
+        }
     }
 }
