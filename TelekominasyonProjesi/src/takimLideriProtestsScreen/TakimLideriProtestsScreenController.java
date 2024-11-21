@@ -82,8 +82,8 @@ public class TakimLideriProtestsScreenController {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		int row=protestTable.getSelectionModel().getFocusedIndex();
-		if(!protestAnswer.getCellObservableValue(row).equals("")) {
+		int row=protestTable.getSelectionModel().getSelectedIndex();
+		if(!(row==-1)) {
 			try {
 				int ıd = Integer.parseInt(asistanNo.getCellObservableValue(row).getValue());
 				PreparedStatement updateItiraz=con.prepareStatement("update Itiraz set itirazCevabi='"+protestAnswer.getCellObservableValue(row).getValue()+"', itirazDurum='onaylandı' where sicilNo="+ıd);
@@ -98,6 +98,8 @@ public class TakimLideriProtestsScreenController {
 				e.printStackTrace();
 			}
 		}
+		else
+			text.setText("Lütfen bir satır seçiniz!");
     }
 
     @FXML
@@ -111,7 +113,7 @@ public class TakimLideriProtestsScreenController {
 			e.printStackTrace();
 		}
     	int row=protestTable.getSelectionModel().getSelectedIndex();
-		if(!protestAnswer.getCellObservableValue(row).equals("")) {
+		if(!(row==-1)) {
 			try {
 				int ıd = Integer.parseInt(asistanNo.getCellObservableValue(row).getValue());
 				PreparedStatement updateItiraz=con.prepareStatement("update Itiraz set itirazCevabi='"+protestAnswer.getCellObservableValue(row).getValue()+"', itirazDurum='reddedildi' where sicilNo="+ıd);
@@ -126,6 +128,8 @@ public class TakimLideriProtestsScreenController {
 				e.printStackTrace();
 			}
 		}
+		else
+			text.setText("Lütfen bir satır seçiniz!");
     }
     
     @FXML
