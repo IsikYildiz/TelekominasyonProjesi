@@ -26,7 +26,7 @@
                   </ImageView>
                </center>
                <bottom>
-                  <Label fx:id="error" prefHeight="26.0" prefWidth="249.0" text="Bilgilerde Hata veya Eksiklik Var" visible="false" BorderPane.alignment="CENTER">
+                  <Label fx:id="error" prefHeight="26.0" prefWidth="407.0" text="Bilgilerde Hata veya Eksiklik Var" visible="false" BorderPane.alignment="CENTER">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
@@ -35,7 +35,7 @@
             </BorderPane>
             <BorderPane prefHeight="200.0" prefWidth="200.0">
                <left>
-                  <TextField fx:id="callDate" maxWidth="-Infinity" prefHeight="40.0" prefWidth="200.0" promptText="Görüşme Tarihi" stylesheets="@../ui/Text-Field.CSS" BorderPane.alignment="CENTER">
+                  <TextField fx:id="callDate" editable="false" maxWidth="-Infinity" prefHeight="40.0" prefWidth="200.0" promptText="Görüşme Tarihi" stylesheets="@../ui/Text-Field.CSS" BorderPane.alignment="CENTER">
                      <font>
                         <Font size="14.0" />
                      </font>

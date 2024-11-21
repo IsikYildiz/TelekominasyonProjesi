@@ -48,6 +48,11 @@ public class addCallScreenController {//Asistan prim eklemek istediğinde açıl
 	@FXML
 	private ToggleGroup customerType;
 	
+	@FXML
+	void initialize(){
+		callDate.setText(LocalDate.now().toString());
+	}
+	
     @FXML
     void addCall(ActionEvent event) throws ClassNotFoundException, SQLException { //Asistan gerekli bilgileri girdikten sonra, asistanın adına yeni bir çağrı eklenir.
     	Connection con=Data.connect();
@@ -56,11 +61,13 @@ public class addCallScreenController {//Asistan prim eklemek istediğinde açıl
         		try {
         			LocalTime startTime = LocalTime.parse(callStartTime.getText());
             		LocalTime endTime = LocalTime.parse(callEndTime.getText());
-            		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-            		LocalDate Date= LocalDate.parse(callDate.getText(),formatter);
-            		Data.addCall(con, Date, customerName, callSubject, startTime, endTime, callSituation,customerType);
-            		error.setText("İşlem Başarılı!");
-            		error.setVisible(true);
+            		Data.addCall(con, LocalDate.now(), customerName, callSubject, startTime, endTime, callSituation,customerType);
+            		try {
+                        Parent root = FXMLLoader.load(getClass().getResource("/callsScreen/callsscreen.fxml"));
+                        backButton.getScene().setRoot(root);
+                    } catch (Exception e) {
+                        System.out.println("Başarısız");
+                    }
             		con.close();
         		}catch (DateTimeParseException e) {
         			error.setText("Girilen Tarih veya Zamanlar Yanlıştır.");
