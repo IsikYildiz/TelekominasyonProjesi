@@ -73,7 +73,7 @@ public class TakimLideriProtestsScreenController {
     }
  
     @FXML
-    void accept(ActionEvent event) {//Seçilen satırdaki itirazı günceller.
+    void accept(ActionEvent event) throws SQLException {//Seçilen satırdaki itirazı günceller.
     	Connection con = null;
 		try {
 			con = Data.connect();
@@ -100,10 +100,11 @@ public class TakimLideriProtestsScreenController {
 		}
 		else
 			text.setText("Lütfen bir satır seçiniz!");
+		con.close();
     }
 
     @FXML
-    void decline(ActionEvent event) {//Seçilen satırdaki itirazı günceller.
+    void decline(ActionEvent event) throws SQLException {//Seçilen satırdaki itirazı günceller.
     	Connection con = null;
 		try {
 			con = Data.connect();
@@ -130,6 +131,7 @@ public class TakimLideriProtestsScreenController {
 		}
 		else
 			text.setText("Lütfen bir satır seçiniz!");
+		con.close();
     }
     
     @FXML

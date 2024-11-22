@@ -4,6 +4,8 @@
     -fx-font-weight: bold;
     -fx-color: black;
     -fx-font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    -fx-width: 200px;
+    -fx-height: 45px;
 }
 
 .button:hover{

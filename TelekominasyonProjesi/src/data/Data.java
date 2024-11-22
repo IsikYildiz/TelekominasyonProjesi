@@ -99,6 +99,18 @@ public class Data { //Veritabanına yapılan işlemlerin neredeyse tümünden so
         setGorusme.executeUpdate();
 	}
 	
+	public static void changeCallStuation(Connection con, LocalDate callDate, String callStartTime, String customerName, String newCallSituation) throws SQLException {
+		Statement findCustomerId = con.createStatement();
+		ResultSet rs = null;
+		int customerId=0;
+		rs= findCustomerId.executeQuery("select musteriId from Musteri where musteriId=(dbo.findId('"+customerName+"','Musteri'))");
+		while(rs.next()) {
+			customerId=rs.getInt(1);
+		}
+		PreparedStatement changeSituation= con.prepareStatement("update Gorusme set gorusmeDurum='"+newCallSituation+"' where gorusmeTarih='"+callDate+"' and gorusmeBaslangicSaati='"+callStartTime+"' and musteriId='"+customerId+"'");
+		changeSituation.execute();		
+	}
+	
 	public static Boolean addAsistanProtest(Connection con,TextField protestExplanation,Date protestDate) throws SQLException {//Asistana itiraz ekler.
 		PreparedStatement getDate= con.prepareStatement("select itirazTarihi from Itiraz where sicilno=("+findId(con,1)+")");
 		ResultSet matchDate=getDate.executeQuery();
