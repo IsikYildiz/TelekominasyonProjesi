@@ -3,7 +3,7 @@
 Bir telekomünikasyon şirketi yönetim sistemi yazılımıdır.
 Manisa Celal Bayar Üniversitesi
 Veri Tabanı Sistemlerine Giriş dersi proje ödevidir.
-Proje Ekibi: Işık Yıldız 222802064
+Proje Ekibi: Işık Yıldız
 
 Proje Özellikleri:
 
